@@ -1,0 +1,8 @@
+.meanings{
+    display: flex;
+    flex-direction: column;
+}
+
+.subTitles{
+    font-size: 5vw;
+}
