@@ -3,7 +3,7 @@ import "./Header.css"
 
 export default function Header() {
     return (
-        <div>
+        <div className="header">
             <span className="title">Word Hunt</span>
         </div>
     )
