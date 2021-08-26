@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App" style={{height: '100vh', background: '#282c34', color: 'white'}}>
       <Container maxWidth="md" style= {{display: "flex", flexDirection: "column", height: "100vh"}}>
-          <Header category={category} setCategory={setCategory}/>
+          <Header category={category} setCategory={setCategory} word={word} setWord={setWord}/>
       </Container>
     </div>
   );

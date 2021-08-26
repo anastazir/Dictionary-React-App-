@@ -2,7 +2,7 @@ import {createTheme, MenuItem, TextField, ThemeProvider} from "@material-ui/core
 import React from 'react'
 import "./Header.css"
 import categories from "../../data/category"
-export default function Header({category, setCategory}) {
+export default function Header({category, setCategory, word, setWord}) {
     const darkTheme= createTheme({
         palette: {
             primary:{
@@ -16,12 +16,15 @@ export default function Header({category, setCategory}) {
             <span className="title">Word Hunt</span>
             <div className="inputs">
             <ThemeProvider theme={darkTheme}>
-                <TextField id="standard-basic" label="Standard" />
+                <TextField id="standard-basic" 
+                label="Standard" 
+                value={word} 
+                onChange={(e)=>(setWord(e.target.value))} />
                 <TextField
                     select
                     label="Select"
                     value={category}
-                    helperText="Please select your currency"
+                    helperText="Please select your language"
                     onChange={(e)=>setCategory(e.target.value)} >
                     {categories.map((option) =>(
                         <MenuItem key={option.value} value={option.label}>
