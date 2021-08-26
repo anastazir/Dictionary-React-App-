@@ -13,10 +13,11 @@ export default function Header({category, setCategory, word, setWord}) {
     })
     return (
         <div className="header">
-            <span className="title">Word Hunt</span>
+            <span className="title">{word? word : "Word Hunt"}</span>
             <div className="inputs">
             <ThemeProvider theme={darkTheme}>
                 <TextField id="standard-basic" 
+                    className="search"
                 label="Standard" 
                 value={word} 
                 onChange={(e)=>(setWord(e.target.value))} />
