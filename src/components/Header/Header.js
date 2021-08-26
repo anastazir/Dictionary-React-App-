@@ -1,8 +1,8 @@
 import {createTheme, MenuItem, TextField, ThemeProvider} from "@material-ui/core"
 import React from 'react'
 import "./Header.css"
-import category from "../../data/category"
-export default function Header() {
+import categories from "../../data/category"
+export default function Header({category, setCategory}) {
     const darkTheme= createTheme({
         palette: {
             primary:{
@@ -18,13 +18,16 @@ export default function Header() {
             <ThemeProvider theme={darkTheme}>
                 <TextField id="standard-basic" label="Standard" />
                 <TextField
-                    id="standard-select-currency"
                     select
                     label="Select"
-                    helperText="Please select your currency">
-                    <MenuItem >
-                        English
-                    </MenuItem>
+                    value={category}
+                    helperText="Please select your currency"
+                    onChange={(e)=>setCategory(e.target.value)} >
+                    {categories.map((option) =>(
+                        <MenuItem key={option.value} value={option.label}>
+                            {option.value}
+                        </MenuItem>
+                    ))}
                 </TextField>
             </ThemeProvider>
             </div>
