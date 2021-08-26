@@ -10,7 +10,13 @@ export default function Header({category, setCategory, word, setWord}) {
             },
             type: 'dark',
         },
-    })
+    });
+
+    const handleChange= (language) => {
+        setCategory(language)
+        setWord("")
+    }
+
     return (
         <div className="header">
             <span className="title">{word? word : "Word Hunt"}</span>
@@ -26,7 +32,7 @@ export default function Header({category, setCategory, word, setWord}) {
                     label="Select"
                     value={category}
                     helperText="Please select your language"
-                    onChange={(e)=>setCategory(e.target.value)} >
+                    onChange={(e)=>handleChange(e.target.value)} >
                     {categories.map((option) =>(
                         <MenuItem key={option.value} value={option.label}>
                             {option.value}
