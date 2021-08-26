@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Container } from '@material-ui/core';
+import Header from './components/Header/Header';
 function App() {
   const [word, setWord] = useState('')
   const [meaning, setMeaning] = useState([])
@@ -24,7 +25,7 @@ function App() {
   return (
     <div className="App" style={{height: '100vh', background: '#282c34', color: 'white'}}>
       <Container maxWidth="md" style= {{display: "flex", flexDirection: "column", height: "100vh"}}>
-          Dictionary
+          <Header/>
       </Container>
     </div>
   );
