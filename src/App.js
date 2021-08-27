@@ -3,13 +3,29 @@
 import './App.css';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Container } from '@material-ui/core';
+import { Container, Switch, withStyles } from '@material-ui/core';
 import Header from './components/Header/Header';
 import Definitions from './components/Definitions/Definitions.js';
+import { grey } from '@material-ui/core/colors';
 function App() {
   const [word, setWord] = useState('')
   const [meanings, setMeanings] = useState([])
   const [category, setCategory] = useState("en")
+  const [lightTheme, setLightTheme] = useState(false)
+
+  const GreySwitch = withStyles({
+    switchBase: {
+      color: grey[300],
+      '&$checked': {
+        color: grey[500],
+      },
+      '&$checked + $track': {
+        backgroundColor: grey[500],
+      },
+    },
+    checked: {},
+    track: {},
+  })(Switch);
 
   const dictionaryAPI= async() =>{
     try {
@@ -27,7 +43,10 @@ function App() {
 
   return (
     <div className="App" style={{height: '100vh', background: '#282c34', color: 'white'}}>
-      <Container maxWidth="md" style= {{display: "flex", flexDirection: "column", height: "100vh"}}>
+      <Container maxWidth="md" style= {{display: "flex", flexDirection: "column", height: "100vh", justifyContent: "space-evenly"}}>
+          <div style={{position: "absolute", top: 10, right: 50}}>
+              <GreySwitch checked={lightTheme} onChange={()=> setLightTheme((!lightTheme))}/>
+          </div>
           <Header category={category} setCategory={setCategory} word={word} setWord={setWord}/>
           {meanings && <Definitions word={word} meanings={meanings} category={category}/>}
       </Container>
