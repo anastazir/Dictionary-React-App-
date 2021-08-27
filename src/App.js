@@ -42,7 +42,12 @@ function App() {
   }, [word, category])
 
   return (
-    <div className="App" style={{height: '100vh', background: '#282c34', color: 'white'}}>
+    <div 
+    className="App" 
+    style={{height: '100vh', 
+    background:lightTheme ? "#fff" :'#282c34', 
+    color:lightTheme ? 'black' : "white",
+    transition: "all 0.5s linear",}}>    
       <Container maxWidth="md" style= {{display: "flex", flexDirection: "column", height: "100vh", justifyContent: "space-evenly"}}>
           <div style={{position: "absolute", top: 10, right: 50}}>
               <GreySwitch checked={lightTheme} onChange={()=> setLightTheme((!lightTheme))}/>
