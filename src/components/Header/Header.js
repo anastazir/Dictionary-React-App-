@@ -2,13 +2,13 @@ import {createTheme, MenuItem, TextField, ThemeProvider} from "@material-ui/core
 import React from 'react'
 import "./Header.css"
 import categories from "../../data/category"
-export default function Header({category, setCategory, word, setWord}) {
+export default function Header({category, setCategory, word, setWord, lightTheme}) {
     const darkTheme= createTheme({
         palette: {
             primary:{
-                main: '#fff'
+                main: !lightTheme ? '#fff': '#000'
             },
-            type: 'dark',
+            type: !lightTheme ?  'dark' : 'light',
         },
     });
 
