@@ -53,7 +53,7 @@ function App() {
               <GreySwitch checked={lightTheme} onChange={()=> setLightTheme((!lightTheme))}/>
           </div>
           <Header category={category} setCategory={setCategory} word={word} setWord={setWord} lightTheme= {lightTheme}/>
-          {meanings && <Definitions word={word} meanings={meanings} category={category}/>}
+          {meanings && <Definitions word={word} meanings={meanings} category={category} lightTheme= {lightTheme}/>}
       </Container>
     </div>
   );

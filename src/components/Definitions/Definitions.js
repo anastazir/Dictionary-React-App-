@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Definitions.css"
 
-const Definitions = ({word, category, meanings}) => {
+const Definitions = ({word, category, meanings, lightTheme}) => {
     return (
         <div className="meanings">
                 {/* {
@@ -20,7 +20,7 @@ const Definitions = ({word, category, meanings}) => {
                     mean.meanings.map((item)=>
                         item.definitions.map((definition)=>
 
-                            <div className="singleMeaning" style={{background: 'white', color: 'black'}} >
+                            <div className="singleMeaning" style={{background:  lightTheme ? '#3b5360' :"white", color: lightTheme ? 'white' :"black"}} >
                                 <b>{definition.definition} &nbsp;</b>    
                                 <br></br>
                                 {definition.example && (
@@ -37,7 +37,7 @@ const Definitions = ({word, category, meanings}) => {
                                     </span>
                                 )}
 
-                                <hr style={{background: 'white', width: '100%'}}></hr>
+                                <hr style={{background: !lightTheme ? 'white' :"black", width: '100%'}}></hr>
                             </div>
 
                         )
