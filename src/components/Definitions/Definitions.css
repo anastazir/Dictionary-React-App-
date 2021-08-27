@@ -1,8 +1,24 @@
 .meanings{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 55vh;
+    scrollbar-width: thin;
+    border: 10px solid rgb(105, 105, 105);
+    border-radius: 10px;
+    padding: 10px 20px;
+    
 }
 
 .subTitles{
     font-size: 5vw;
+}
+
+@media (min-width: 768px){
+    .meanings{
+        height: 60vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 }
