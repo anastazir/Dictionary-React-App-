@@ -2,8 +2,19 @@ import React from 'react'
 import "./Definitions.css"
 
 const Definitions = ({word, category, meanings}) => {
+    console.log(meanings[0].phonetics[0].audio);
     return (
         <div className="meanings">
+            {
+                meanings[0] && word && category === "en" && (
+                    <audio scr={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
+                        style={{background: '#fff', boderRadius: 10}}
+                        controls
+                    >
+                        Audio is only available for the English language.    
+                    </audio>
+                )
+            }
             {   
                 word===""? (<span className="subTitle">Start by typing a word in the search box</span>):
                 meanings.map((mean)=>
