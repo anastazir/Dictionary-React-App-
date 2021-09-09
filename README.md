@@ -3,11 +3,15 @@
 
 A website to search the meaning of a word in 8 different lagnuages
 
-## Tech Stack and Features
+## Tech stack used
+
+[![React Badge](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)](#)
+[![Material-UI Badge](https://img.shields.io/badge/-materialui-%230081CB?style=for-the-badge&labelColor=black&logo=material-ui&logoColor=)](#)
+
+
+## Features
 
 - Light/dark mode toggle
-- Reactjs for fornt end
-- Material ui for styling
 
 
 ## Screenshots
