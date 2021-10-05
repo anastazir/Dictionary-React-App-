@@ -24,7 +24,7 @@ export default function Header({category, setCategory, word, setWord, lightTheme
             <ThemeProvider theme={darkTheme}>
                 <TextField id="standard-basic" 
                     className="search"
-                label="Standard" 
+                label="Enter Word" 
                 value={word} 
                 onChange={(e)=>(setWord(e.target.value))} />
                 <TextField
