@@ -30,3 +30,8 @@
         overflow-y: scroll;
     }
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.meanings::-webkit-scrollbar {
+    display: none;
+  }
+  
